@@ -378,3 +378,10 @@ body {
 
 }
 
+#home_text p {
+	font-size: 18px;
+	&.expecting {
+		font-weight: bold;
+	}
+}
+

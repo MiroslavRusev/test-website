@@ -53,7 +53,7 @@
   // generate colums
   // .col-1-12 { width: 8.33333%; }
   @for $i from 1 through 12 {
-    $width: (100% / 12) * $i;
+    $width: calc(100% / 12) * $i;
 
     > .col-#{$i}-12 {
       max-width: $width;
@@ -63,7 +63,7 @@
   // generate colums
   // .col-1-10 { width: 10%; }
   @for $i from 1 through 10 {
-    $width: (100% / 10) * $i;
+    $width: calc(100% / 10) * $i;
 
     > .col-#{$i}-10 {
       max-width: $width;
