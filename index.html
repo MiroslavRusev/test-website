@@ -122,7 +122,7 @@
       <ul class="menu uppercase">
         <li><a href="#">Начало</a></li>
         <li><a href="#gallerySection">Галерия</a></li>
-        <li><a href="#">Резервации</a></li>
+        <li><a href="#reservationsSection">Резервации</a></li>
         <li><a href="#">Книга за гости</a></li>
         <li><a href="#">Контакти</a></li>
       </ul>
@@ -147,7 +147,7 @@
     <ul class="mainMenu margin-top-3">
       <li><a href="#">Начало</a></li>
       <li><a href="#gallerySection">Галерия</a></li>
-      <li><a href="#">Резервации</a></li>
+      <li><a href="#reservationsSection">Резервации</a></li>
       <li><a href="#">Книга за гости</a></li>
       <li><a href="#">Контакти</a></li>
     </ul>
@@ -272,17 +272,60 @@
 </section>
 
 <!-- Slide 3 (#14) -->
-<section class="slide fade-6 kenBurns fromRight">
+<section id="reservationsSection" class="slide fade-7 kenBurns fromRight">
   <div class="content">
     <div class="container">
       <div class="wrap">
       
-        <div class="fix-12-12">
-          <div class="fix-6-12 left toLeft">
-            <h1 class="ae-1">Designers are meant to be loved, not to be understood.</h1>
-            <p class="ae-2"><span class="opacity-8">You must forget all your theories, all your ideas before the subject. What part of these is really your own will be expressed in your&nbsp;expression.</span></p>
-            <a class="button blue gradient crop ae-3">Get Started</a>
+        <div class="fix-12-12 ae-1">
+          <div class="fix-8-12 margin-bottom-2">
+            <img src="assets/img/nav/reservations.png" alt="Резервации">
+            <h3 class="center">ОБЩИ УСЛОВИЯ ЗА ПОЛЗВАНЕ НА ОБЕКТ КЪЩА ЗА ГОСТИ „ЕЛИЦА“, с.СРЕДНИ КОЛИБИ</h3>
           </div>
+          <div class="fix-12-12 margin-bottom-2">
+            <ul class="left list disc">
+              <li>На територията на Къща за гости „Елица“, с. Средни колиби, не се допускат домашни любимци.</li>
+              <li>Забранено е поставянето на надуваеми басейни и играчки по тревните площи, както и употребата на пиротехнически средства.</li>
+              <li>При нарушаване на обществения ред – силна музика след 23ч. и подаден сигнал към органите на реда, гостите на Къща „Елица“ поемата цялата отговорност за наложени санкции и глоби.</li>
+              <li>Всички материални щети или загуби, причинени по време на наемния период, са за сметка на гостите и се заплащат в пълния им размер след направен оглед на обекта преди напускане.</li>
+              <li>Собственикът на Къща „Елица“ не носи отговорност за произшествия с децата на гостите. За целта са поствени уведомителни табели.</li>
+              <li>Собственикът има право на безпрепятствен достъп до къщата и нейните съоръжения по всяко време на наемния период – за поддръжка на дома, градината и комуналните услуги.</li>
+            </ul>
+            <p class="left tiny">Потвърждаването на резервацията се счита за съгласие с гореспоменатите условия за наемане на Къща „Елица“, с.Средни колиби.</p>
+          </div>
+        <ul class="flex reservations-table">
+          <li class="col-5-12">
+            <div class="pad opacity-7">
+              <table class="margin-bottom-2">
+                <tbody>
+                <tr class="padding-bottom-1">
+                  <th class="tableLeftColumn">Опция</th>
+                  <th>Цена</th>
+                </tr>
+                <tr>
+                  <td class="align-left border-top padding-top-1">Самостоятелно наемане на къщата</td>
+                  <td class="bold border-top padding-top-1">700лв. на вечер</td>
+                </tr>
+                </tbody>
+              </table>
+              <ul class="left list disc">
+                <li>Срещу допълнително заплащане предлагаме още 3 стаи - двойна, тройна и четворна.</li>
+                <li>При резервация се заплаща капаро в размер на 30% от общата сума, което не се възстановява при анулиране или неявяване.</li>
+                <li>Резервация за наемане на къщата минимум 14 дни преди датата на гостуване.</li>
+                <li>Предложените цени не са актуални за празници.</li>
+              </ul>
+            </div>
+
+          </li>
+          <li class="col-2-12">&nbsp;</li>
+          <li class="col-5-12">
+            <div class="center"><h3>За резервации може да се свържете с нас на номер:<br>0888/203920<br>или да използвате нашата форма:</h3></div>
+
+            <form action="/v2/reservations/add" id="ReservationAddForm" method="post" accept-charset="utf-8"><div style="display:none;"><input type="hidden" name="_method" value="POST"></div>        <div class="input text required"><label for="ReservationName">Име</label><input name="data[Reservation][name]" maxlength="255" type="text" id="ReservationName" required="required" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHklEQVQ4EaVTO26DQBD1ohQWaS2lg9JybZ+AK7hNwx2oIoVf4UPQ0Lj1FdKktevIpel8AKNUkDcWMxpgSaIEaTVv3sx7uztiTdu2s/98DywOw3Dued4Who/M2aIx5lZV1aEsy0+qiwHELyi+Ytl0PQ69SxAxkWIA4RMRTdNsKE59juMcuZd6xIAFeZ6fGCdJ8kY4y7KAuTRNGd7jyEBXsdOPE3a0QGPsniOnnYMO67LgSQN9T41F2QGrQRRFCwyzoIF2qyBuKKbcOgPXdVeY9rMWgNsjf9ccYesJhk3f5dYT1HX9gR0LLQR30TnjkUEcx2uIuS4RnI+aj6sJR0AM8AaumPaM/rRehyWhXqbFAA9kh3/8/NvHxAYGAsZ/il8IalkCLBfNVAAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;"></div>        <div class="input email required"><label for="ReservationEmail">E-mail</label><input name="data[Reservation][email]" maxlength="255" type="email" id="ReservationEmail" required="required"></div>        <div class="input textarea required"><label for="ReservationComment">Коментар</label><textarea name="data[Reservation][comment]" cols="30" rows="6" id="ReservationComment" required="required"></textarea></div>        <div class="input text"><label for="ReservationCaptcha">Код</label><input name="data[Reservation][captcha]" type="text" id="ReservationCaptcha"><img id="CaptchaImage" src="/reservations/captcha" alt="Captcha"><span id="ReservationRefresh"></span></div>        <div class="center">
+              <div class="submit"><input id="submit" type="submit" value="Изпрати"></div>        </div>
+            </form>
+          </li>
+        </ul>
         </div>
             
       </div>  

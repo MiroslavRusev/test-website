@@ -1,0 +1,8 @@
+.reservations-table {
+  & .tableLeftColumn {
+    width: 25%;
+  }
+  & .border-top {
+      border-top: 1px solid black;
+    }
+}
