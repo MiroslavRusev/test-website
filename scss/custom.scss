@@ -6,3 +6,26 @@
       border-top: 1px solid black;
     }
 }
+
+.mapouter {
+  position:relative;
+  height:310px;
+}
+
+.gmap_canvas {
+  overflow:hidden;
+  background:none!important;
+  height:310px;
+  width:100%;
+}
+
+@include media($tablet, min) {
+  .mapouter {
+    height:400px;
+    width: 600px;
+  }
+  .gmap_canvas {
+    height:400px;
+    width:600px;
+  }
+}

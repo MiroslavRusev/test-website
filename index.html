@@ -17,7 +17,7 @@
 	<!-- <link href="css/custom.css" rel="stylesheet" type="text/css"> -->
 
 	<!-- jQuery 3.3.1 -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="js/jquery.min.js"></script>
 
 	<!-- Compressed Scripts -->
 	<script src="js/slides.min.js?41331" type="text/javascript"></script>
@@ -26,7 +26,7 @@
 	 <script src="js/slider.js" type="text/javascript"></script>
 
 	<!-- Fonts and Material Icons -->
-	<link rel="stylesheet" as="font" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,600,700|Material+Icons"/>
+<!--	<link rel="stylesheet" as="font" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,600,700|Material+Icons"/>-->
  
 </head>
 <body class="slides chain simplifiedMobile animated">
@@ -123,13 +123,12 @@
         <li><a href="#">Начало</a></li>
         <li><a href="#gallerySection">Галерия</a></li>
         <li><a href="#reservationsSection">Резервации</a></li>
-        <li><a href="#">Книга за гости</a></li>
-        <li><a href="#">Контакти</a></li>
+        <li><a href="#contactSection">Контакти</a></li>
       </ul>
     </div>
     <div class="right">
       <ul class="menu trim">
-        <li><a href="https://www.facebook.com/KompleksElitca" target="_blank"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#facebook"></use></svg></a></li>
+        <li><a aria-label="Kompleks Elitca facebook page" href="https://www.facebook.com/KompleksElitca" target="_blank"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#facebook"></use></svg></a></li>
        </ul>
     </div>
   </div>
@@ -143,13 +142,12 @@
 <nav class="sidebar" data-sidebar-id="1">
   <div class="close"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg></div>
   <div class="content">
-    <a href="#" class="logo"><img src="assets/img/background/home_logo.png" alt="Комплекс Елица - начална страница"></a>
+    <a href="#" class="logo"><img src="assets/img/nav/home_logo.png" alt="Комплекс Елица - начална страница"></a>
     <ul class="mainMenu margin-top-3">
       <li><a href="#">Начало</a></li>
       <li><a href="#gallerySection">Галерия</a></li>
       <li><a href="#reservationsSection">Резервации</a></li>
-      <li><a href="#">Книга за гости</a></li>
-      <li><a href="#">Контакти</a></li>
+      <li><a href="#contactSection">Контакти</a></li>
     </ul>
     <ul class="subMenu small opacity-8">
       <li class="notLink">с. Средни Колиби,<br>община Елена</li>
@@ -157,7 +155,7 @@
       <li><a href="mailto:kompleks_elitca@abv.bg">kompleks_elitca@abv.bg</a></li>
     </ul>
     <ul class="social opacity-8">
-      <li><a href="https://www.facebook.com/KompleksElitca"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#facebook"></use></svg></a></li>
+      <li><a aria-label="Kompleks Elitca facebook page mobile link" href="https://www.facebook.com/KompleksElitca"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#facebook"></use></svg></a></li>
     </ul>
   </div>
 </nav>
@@ -173,20 +171,20 @@
 
         <div class="fix-12-12">
           <div class="fix-6-12">
-            <img src="assets/img/background/home_logo.png" alt="Комплекс Елица - начална страница">
+            <img src="assets/img/nav/home_logo.png" alt="Комплекс Елица - начална страница">
           </div>
           <div id="slider">
             <a href="#" class="control_next">></a>
             <a href="#" class="control_prev"><</a>
             <ul>
               <li>
-                <img src="assets/img/slider/home_img1.png" alt="fist slider image">
+                <img src="assets/img/slider/home_img1.jpeg" alt="fist slider image">
               </li>
               <li>
-                <img src="assets/img/slider/home_img2.png" alt="second slider image">
+                <img loading="lazy" src="assets/img/slider/home_img2.jpeg" alt="second slider image">
               </li>
               <li>
-                <img src="assets/img/slider/home_img3.png" alt="third slider image">
+                <img loading="lazy" src="assets/img/slider/home_img3.jpeg" alt="third slider image">
               </li>
             </ul>
           </div>
@@ -221,54 +219,54 @@
       </div>
     </div>
   </div>
-  <div class="background" style="background-image:url(assets/img/background/backgr.png)"></div>
+  <div class="background" style="background-image:url(assets/img/background/background.jpg)"></div>
 </section>
 
 
 
 <!-- Slide 2 (#15) -->
-<section id="gallerySection" class="slide fade-3 kenBurns fromLeft">
+<section id="gallerySection" class="slide fade-6 kenBurns fromLeft">
   <div class="content">
     <div class="container">
       <div class="wrap">
       
         <div class="fix-12-12">
-          <div class="fix-6-12">
+          <div class="fix-8-12">
             <img src="assets/img/nav/gallery.png" alt="Галерия">
           </div>
           <div class="gg-container">
             <div class="gg-box">
-              <img src="assets/img/gallery/gallery_image1.jpg" alt="gallery image 1">
-              <img src="assets/img/gallery/gallery_image2.jpg" alt="gallery image 2">
-              <img src="assets/img/gallery/gallery_image3.jpg" alt="gallery image 3">
-              <img src="assets/img/gallery/gallery_image4.jpg" alt="gallery image 4">
-              <img src="assets/img/gallery/gallery_image5.jpg" alt="gallery image 5">
-              <img src="assets/img/gallery/gallery_image6.jpg" alt="gallery image 6">
-              <img src="assets/img/gallery/gallery_image7.jpg" alt="gallery image 7">
-              <img src="assets/img/gallery/gallery_image8.jpg" alt="gallery image 8">
-              <img src="assets/img/gallery/gallery_image9.jpg" alt="gallery image 9">
-              <img src="assets/img/gallery/gallery_image10.jpg" alt="gallery image 10">
-              <img src="assets/img/gallery/gallery_image11.jpg" alt="gallery image 11">
-              <img src="assets/img/gallery/gallery_image12.jpg" alt="gallery image 12">
-              <img src="assets/img/gallery/gallery_image13.jpg" alt="gallery image 13">
-              <img src="assets/img/gallery/gallery_image14.jpg" alt="gallery image 14">
-              <img src="assets/img/gallery/gallery_image15.jpg" alt="gallery image 15">
-              <img src="assets/img/gallery/gallery_image16.jpg" alt="gallery image 16">
-              <img src="assets/img/gallery/gallery_image17.jpg" alt="gallery image 17">
-              <img src="assets/img/gallery/gallery_image18.jpg" alt="gallery image 18">
-              <img src="assets/img/gallery/gallery_image19.jpg" alt="gallery image 19">
-              <img src="assets/img/gallery/gallery_image20.jpg" alt="gallery image 20">
-              <img src="assets/img/gallery/gallery_image21.jpg" alt="gallery image 21">
-              <img src="assets/img/gallery/gallery_image22.jpg" alt="gallery image 22">
-              <img src="assets/img/gallery/gallery_image23.jpg" alt="gallery image 23">
-              <img src="assets/img/gallery/gallery_image24.jpg" alt="gallery image 24">
+              <img loading="lazy" src="assets/img/gallery/gallery_image1.webp" alt="gallery image 1">
+              <img loading="lazy" src="assets/img/gallery/gallery_image2.webp" alt="gallery image 2">
+              <img loading="lazy" src="assets/img/gallery/gallery_image3.webp" alt="gallery image 3">
+              <img loading="lazy" src="assets/img/gallery/gallery_image4.webp" alt="gallery image 4">
+              <img loading="lazy" src="assets/img/gallery/gallery_image5.webp" alt="gallery image 5">
+              <img loading="lazy" src="assets/img/gallery/gallery_image6.webp" alt="gallery image 6">
+              <img loading="lazy" src="assets/img/gallery/gallery_image7.webp" alt="gallery image 7">
+              <img loading="lazy" src="assets/img/gallery/gallery_image8.webp" alt="gallery image 8">
+              <img loading="lazy" src="assets/img/gallery/gallery_image9.webp" alt="gallery image 9">
+              <img loading="lazy" src="assets/img/gallery/gallery_image10.webp" alt="gallery image 10">
+              <img loading="lazy" src="assets/img/gallery/gallery_image11.webp" alt="gallery image 11">
+              <img loading="lazy" src="assets/img/gallery/gallery_image12.webp" alt="gallery image 12">
+              <img loading="lazy" src="assets/img/gallery/gallery_image13.webp" alt="gallery image 13">
+              <img loading="lazy" src="assets/img/gallery/gallery_image14.webp" alt="gallery image 14">
+              <img loading="lazy" src="assets/img/gallery/gallery_image15.webp" alt="gallery image 15">
+              <img loading="lazy" src="assets/img/gallery/gallery_image16.webp" alt="gallery image 16">
+              <img loading="lazy" src="assets/img/gallery/gallery_image17.webp" alt="gallery image 17">
+              <img loading="lazy" src="assets/img/gallery/gallery_image18.webp" alt="gallery image 18">
+              <img loading="lazy" src="assets/img/gallery/gallery_image19.webp" alt="gallery image 19">
+              <img loading="lazy" src="assets/img/gallery/gallery_image20.webp" alt="gallery image 20">
+              <img loading="lazy" src="assets/img/gallery/gallery_image21.webp" alt="gallery image 21">
+              <img loading="lazy" src="assets/img/gallery/gallery_image22.webp" alt="gallery image 22">
+              <img loading="lazy" src="assets/img/gallery/gallery_image23.webp" alt="gallery image 23">
+              <img loading="lazy" src="assets/img/gallery/gallery_image24.webp" alt="gallery image 24">
             </div>
           </div>
       </div>
     </div>
   </div>
   </div>
-  <div class="background" style="background-image:url(assets/img/background/shadow-house.png)"></div>
+  <div class="background" style="background-image:url(assets/img/background/background2.jpg)"></div>
 </section>
 
 <!-- Slide 3 (#14) -->
@@ -282,194 +280,111 @@
             <img src="assets/img/nav/reservations.png" alt="Резервации">
             <h3 class="center">ОБЩИ УСЛОВИЯ ЗА ПОЛЗВАНЕ НА ОБЕКТ КЪЩА ЗА ГОСТИ „ЕЛИЦА“, с.СРЕДНИ КОЛИБИ</h3>
           </div>
-          <div class="fix-12-12 margin-bottom-2">
-            <ul class="left list disc">
-              <li>На територията на Къща за гости „Елица“, с. Средни колиби, не се допускат домашни любимци.</li>
-              <li>Забранено е поставянето на надуваеми басейни и играчки по тревните площи, както и употребата на пиротехнически средства.</li>
-              <li>При нарушаване на обществения ред – силна музика след 23ч. и подаден сигнал към органите на реда, гостите на Къща „Елица“ поемата цялата отговорност за наложени санкции и глоби.</li>
-              <li>Всички материални щети или загуби, причинени по време на наемния период, са за сметка на гостите и се заплащат в пълния им размер след направен оглед на обекта преди напускане.</li>
-              <li>Собственикът на Къща „Елица“ не носи отговорност за произшествия с децата на гостите. За целта са поствени уведомителни табели.</li>
-              <li>Собственикът има право на безпрепятствен достъп до къщата и нейните съоръжения по всяко време на наемния период – за поддръжка на дома, градината и комуналните услуги.</li>
-            </ul>
-            <p class="left tiny">Потвърждаването на резервацията се счита за съгласие с гореспоменатите условия за наемане на Къща „Елица“, с.Средни колиби.</p>
-          </div>
-        <ul class="flex reservations-table">
-          <li class="col-5-12">
-            <div class="pad opacity-7">
-              <table class="margin-bottom-2">
-                <tbody>
-                <tr class="padding-bottom-1">
-                  <th class="tableLeftColumn">Опция</th>
-                  <th>Цена</th>
-                </tr>
-                <tr>
-                  <td class="align-left border-top padding-top-1">Самостоятелно наемане на къщата</td>
-                  <td class="bold border-top padding-top-1">700лв. на вечер</td>
-                </tr>
-                </tbody>
-              </table>
+          <ul class="flex">
+            <li class="col-4-12 margin-bottom-2">
               <ul class="left list disc">
-                <li>Срещу допълнително заплащане предлагаме още 3 стаи - двойна, тройна и четворна.</li>
-                <li>При резервация се заплаща капаро в размер на 30% от общата сума, което не се възстановява при анулиране или неявяване.</li>
-                <li>Резервация за наемане на къщата минимум 14 дни преди датата на гостуване.</li>
-                <li>Предложените цени не са актуални за празници.</li>
+                <li>На територията на Къща за гости „Елица“, с. Средни колиби, не се допускат домашни любимци.</li>
+                <li>Забранено е поставянето на надуваеми басейни и играчки по тревните площи, както и употребата на пиротехнически средства.</li>
+                <li>При нарушаване на обществения ред – силна музика след 23ч. и подаден сигнал към органите на реда, гостите на Къща „Елица“ поемата цялата отговорност за наложени санкции и глоби.</li>
+                <li>Всички материални щети или загуби, причинени по време на наемния период, са за сметка на гостите и се заплащат в пълния им размер след направен оглед на обекта преди напускане.</li>
+                <li>Собственикът на Къща „Елица“ не носи отговорност за произшествия с децата на гостите. За целта са поствени уведомителни табели.</li>
+                <li>Собственикът има право на безпрепятствен достъп до къщата и нейните съоръжения по всяко време на наемния период – за поддръжка на дома, градината и комуналните услуги.</li>
               </ul>
-            </div>
+              <p class="margin-top-1 left tiny">Потвърждаването на резервацията се счита за съгласие с гореспоменатите условия за наемане на Къща „Елица“, с.Средни колиби.</p>
+            </li>
+            <li class="col-4-12 reservations-table margin-bottom-tablet-2">
+              <div class="pad opacity-8 padding-3">
+                <table class="margin-bottom-2">
+                  <tbody>
+                  <tr class="padding-bottom-1">
+                    <th class="tableLeftColumn">Опция</th>
+                    <th>Цена</th>
+                  </tr>
+                  <tr>
+                    <td class="align-left border-top padding-top-1">Самостоятелно наемане на къщата</td>
+                    <td class="bold border-top padding-top-1">700лв. на вечер</td>
+                  </tr>
+                  </tbody>
+                </table>
+                <ul class="left list disc">
+                  <li>Срещу допълнително заплащане предлагаме още 3 стаи - двойна, тройна и четворна.</li>
+                  <li>При резервация се заплаща капаро в размер на 30% от общата сума, което не се възстановява при анулиране или неявяване.</li>
+                  <li>Резервация за наемане на къщата минимум 14 дни преди датата на гостуване.</li>
+                  <li>Предложените цени не са актуални за празници.</li>
+                </ul>
+              </div>
+            </li>
+            <li class="col-4-12">
+              <form action="https://api.staticforms.xyz/submit" method="post" class="slides-form pad opacity-8">
+                <h3 class="center">Свържете се с нас:</h3>
+                <!-- Replace with accessKey sent to your email -->
+                <input type="hidden" name="accessKey" value="1358b299-c651-4d06-9c1c-74bdaaa1fabe"> <!-- Required -->
+                <div class="field align-left">
+                  <label for="name" >Име*</label>
+                  <input type="text" id="name" name="name" required placeholder="Иван Иванов">
+                </div>
+                <input type="hidden" id="subject" name="subject" value="Комплекс Елица - проверка за резервация от уебсайт"> <!-- Optional -->
+                <div class="field align-left">
+                  <label for="email" class="left">Email</label>
+                  <input type="text" id="email" name="email" placeholder="mail@example.com"> <!-- Optional -->
+                </div>
+                <div class="field align-left">
+                  <label for="phone" class="left">Телефон*</label>
+                  <input type="text" id="phone" name="phone" required placeholder="0888888888"> <!-- Optional -->
+                </div>
+                <div class="field align-left">
+                  <label for="message" class="left">Коментар*</label>
+                  <textarea id="message" name="message" required></textarea> <!-- Optional -->
+                </div>
+                <div class="field align-left">
+                  <input type="hidden" name="replyTo" value="kompleks_elitca@abv.bg"> <!-- Optional -->
+                  <!-- If you want form to redirect to a specific url after submission -->
+                  <input type="hidden" name="redirectTo" value="http://kompleks-elitca.com#reservationsSection"> <!-- Optional -->
+                  <input type="text" name="honeypot" style="display: none !important;"> <!-- Optional -->
+                  <input class="button black" type="submit" value="Submit" />
+                </div>
+              </form>
+            </li>
+          </ul>
 
-          </li>
-          <li class="col-2-12">&nbsp;</li>
-          <li class="col-5-12">
-            <div class="center"><h3>За резервации може да се свържете с нас на номер:<br>0888/203920<br>или да използвате нашата форма:</h3></div>
-
-            <form action="/v2/reservations/add" id="ReservationAddForm" method="post" accept-charset="utf-8"><div style="display:none;"><input type="hidden" name="_method" value="POST"></div>        <div class="input text required"><label for="ReservationName">Име</label><input name="data[Reservation][name]" maxlength="255" type="text" id="ReservationName" required="required" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHklEQVQ4EaVTO26DQBD1ohQWaS2lg9JybZ+AK7hNwx2oIoVf4UPQ0Lj1FdKktevIpel8AKNUkDcWMxpgSaIEaTVv3sx7uztiTdu2s/98DywOw3Dued4Who/M2aIx5lZV1aEsy0+qiwHELyi+Ytl0PQ69SxAxkWIA4RMRTdNsKE59juMcuZd6xIAFeZ6fGCdJ8kY4y7KAuTRNGd7jyEBXsdOPE3a0QGPsniOnnYMO67LgSQN9T41F2QGrQRRFCwyzoIF2qyBuKKbcOgPXdVeY9rMWgNsjf9ccYesJhk3f5dYT1HX9gR0LLQR30TnjkUEcx2uIuS4RnI+aj6sJR0AM8AaumPaM/rRehyWhXqbFAA9kh3/8/NvHxAYGAsZ/il8IalkCLBfNVAAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;"></div>        <div class="input email required"><label for="ReservationEmail">E-mail</label><input name="data[Reservation][email]" maxlength="255" type="email" id="ReservationEmail" required="required"></div>        <div class="input textarea required"><label for="ReservationComment">Коментар</label><textarea name="data[Reservation][comment]" cols="30" rows="6" id="ReservationComment" required="required"></textarea></div>        <div class="input text"><label for="ReservationCaptcha">Код</label><input name="data[Reservation][captcha]" type="text" id="ReservationCaptcha"><img id="CaptchaImage" src="/reservations/captcha" alt="Captcha"><span id="ReservationRefresh"></span></div>        <div class="center">
-              <div class="submit"><input id="submit" type="submit" value="Изпрати"></div>        </div>
-            </form>
-          </li>
-        </ul>
         </div>
-            
-      </div>  
+      </div>
     </div>
   </div>
   <div class="background" style="background-image:url(assets/img/background/img-14.jpg)"></div>
 </section>
 
-<!-- Slide 4 (#89) -->
-<section class="slide fade-6 kenBurns">
-  <div class="content">
-    <div class="container">
-      <div class="wrap">
-
-        <div class="fix-12-12">
-          <ul class="flex left">
-            <li class="col-6-12 fromBottomLeft">
-              <p class="opacity-6 margin-bottom-2 ae-1">Case study</p>
-              <h1 class="ae-2">The Secret of Success</h1>
-              <div class="ae-3"><p class="opacity-8">No matter how many times your amazing, absolutely brilliant work is rejected by the client, for whatever dopey, arbitrary reason, there is often another amazing, absolutely brilliant solution possible.</p></div>
-              <ul class="flex">
-                <li class="col-6-12 ae-3">
-                  <h3 class="margin-top-3">Camera</h3>
-                  <p class="tiny opacity-6">Scan entire conversations in a chat-like view.</p>
-                </li>
-                <li class="col-6-12 ae-4">
-                  <h3 class="margin-top-3">Messages</h3>
-                  <p class="tiny opacity-6">Quickly swipe messages to your archive or trash.</p>
-                </li>
-                <li class="col-6-12 ae-5">
-                  <h3 class="margin-top-3">Music Center</h3>
-                  <p class="tiny opacity-6">Unforgettable feelings through a quality music.</p>
-                </li>
-                <li class="col-6-12 ae-6">
-                  <h3 class="margin-top-3">Channels</h3>
-                  <p class="tiny opacity-6">Read reviews, compare customer ratings.</p>
-                </li>
-              </ul>
-            </li>
-            <li class="col-1-12">&nbsp;</li>
-            <li class="col-5-12 bottom">
-              <div class="videoThumbnail shadow rounded popupTrigger margin-bottom-3 ae-7" data-popup-id="89-3">
-                <img src="assets/img/image-89-1.jpg" class="wide" alt="Video Thumbnail"/>
-              </div>
-              <img src="assets/img/image-89-2.jpg" data-action="zoom" class="shadow rounded ae-8" alt="Image"/>
-            </li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-  </div>
-  <div class="background" style="background-image:url(assets/img/background/img-89.jpg)"></div>
-</section>
-
-<!-- Popup Video -->
-<div class="popup autoplay" data-popup-id="89-3">
-  <div class="close"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg></div>
-  <div class="content">
-    <div class="container">
-      <div class="wrap">
-        <div class="fix-10-12">
-          <div class="embedVideo popupContent">
-            <iframe src="https://www.youtube.com/embed/g8yBqxTiHSs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-<!-- Slide 5 (#85) -->
-<section class="slide fade-6 kenBurns">
-  <div class="content">
-    <div class="container">
-      <div class="wrap">
-      
-        <div class="fix-7-12">
-          <h1 class="ae-1">Pricing</h1>
-          <ul class="grid grid-85 equal margin-top-5 ae-2 fromCenter" data-equal-collapse-width="767">
-            <li class="col-6-12 col-tablet-1-2 col-phablet-1-1 margin-bottom-2 ae-3">
-              <div class="pad" style="background: #F5FBFE">
-                <h3>Moon</h3>
-                <div class="price ae-5"><span class="currency">$</span>0</div>
-                <div class="ae-5">
-                  <h6 class="uppercase bold small opacity-4">No Credit Card Needed</h6>
-                </div>
-                <div class="margin-top-3 margin-bottom-3 equalElement ae-6">
-                  <ul class="p tiny">
-                    <li><strong>25 Free Images</strong></li>
-                    <li class="opacity-8">Custom Domain</li>
-                    <li class="opacity-8">24/7 Customer Support</li>
-                  </ul>
-                </div>
-                <a href="#" class="button green gradient wide cropSides cropBottom ae-7">Try Free</a>
-              </div>
-            </li>
-            <li class="col-6-12 col-tablet-1-2 col-phablet-1-1 ae-4">
-              <div class="pad">
-                <h3>Planet</h3>
-                <div class="price ae-6"><span class="currency">$</span>6</div>
-                <div class="ae-6">
-                  <h6 class="uppercase bold small opacity-4">Billed per Month</h6>
-                </div>
-                <div class="margin-top-3 margin-bottom-3 equalElement ae-7">
-                  <ul class="p tiny">
-                    <li><strong>60 Free Images</strong></li>
-                    <li><strong>Mobile-Optimized</strong></li>
-                    <li><strong>No Transaction Fees</strong></li>
-                    <li class="opacity-8">Custom Domain</li>
-                    <li class="opacity-8">24/7 Customer Support</li>
-                  </ul>
-                </div>
-                <a href="#" class="button blue gradient wide cropSides cropBottom ae-8">Purchase</a>
-              </div>
-            </li>
-          </ul>
-        </div> 
-        
-      </div>
-    </div>
-  </div>
-  <div class="background" style="background-image:url(assets/img/background/img-85.jpg)"></div>
-</section>
 
 <!-- Slide 6 (#95) -->
-<section class="slide fade-6 kenBurns">
+<section id="contactSection" class="slide fade-6 kenBurns">
   <div class="content">
     <div class="container">
       <div class="wrap">
-      
-        <div class="fix-6-12">
-          <h1 class="huge ae-1 margin-bottom-2">Download Mobile App</h1>
-          <p class="hero ae-2 margin-bottom-3"><span class="opacity-8">Learning never exhausts the mind.</span></p>
 
-          <form action="#" autocomplete="off" class="slides-form margin-bottom-3">
-            <input type="email" class="ae-3" name="email" placeholder="E-mail address"/>
-            <button type="submit" class="button blue gradient ae-4" name="submit">Try it free</button>
-          </form>
-
-          <a href="#" class="button hollow ae-5"><img src="assets/img/appstore.jpg" height="63"/></a><a href="#" class="button hollow ae-6"><img src="assets/img/googleplay.jpg" height="63"/></a>
+        <div class="fix-8-12 margin-bottom-2">
+          <img src="assets/img/nav/contacts.png" alt="Контакти">
         </div>
+        <ul class="flex">
+          <li class="col-4-12">
+            <h3 class="center">Свържете се с нас:</h3>
+            <div class="left pad padding-2">
+              <p class="tiny"><strong>E-mail:</strong> <a href="mailto:kompleks_elitca@abv.bg">kompleks_elitca@abv.bg</a></p>
+              <p class="tiny"><strong>Телефон:</strong> 0888/203920 (Милена Мартинкова)</p>
+              <p class="tiny"><strong>Адрес:</strong> с. Средни Колиби, община Елена</p>
+            </div>
+          </li>
+          <li class="col-2-12">&nbsp;</li>
+          <li class="col-6-12 center">
+            <div class="mapouter">
+              <div class="gmap_canvas">
+                <iframe title="Google Maps" width="600" height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=%D0%9A%D1%8A%D1%89%D0%B0%20%D0%B7%D0%B0%20%D0%B3%D0%BE%D1%81%D1%82%D0%B8%20%D0%95%D0%BB%D0%B8%D1%86%D0%B0%20%D1%81%D1%80%D0%B5%D0%B4%D0%BD%D0%B8%20%D0%BA%D0%BE%D0%BB%D0%B8%D0%B1%D0%B8&t=k&z=13&ie=UTF8&iwloc=&output=embed"
+                        frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://fmovies-online.net">fmovies</a>
+                <br>
+                <a href="https://www.embedgooglemap.net">embedgooglemap.net</a>
+              </div>
+            </div>
+          </li>
+        </ul>
                 
       </div>
     </div>
@@ -480,7 +395,10 @@
 <!-- Panel Bottom #15 -->
 <nav class="panel bottom lastSlideOnly">
   <div class="sections">
-    <div class="center"><a href="#" class="opacity-8">Available <svg style="height:21px;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#apple"></use></svg> iPhone</a></div>
+    <div class="center"><p class="opacity-8 tiny">
+      с. Средни Колиби, община Елена<br>
+      Милена Мартинкова - 0888/203920<br>
+      e-mail: <a href="mailto:kompleks_elitca@abv.bg">kompleks_elitca@abv.bg</a></p></div>
   </div>
 </nav>
 
