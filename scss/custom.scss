@@ -19,7 +19,7 @@
   width:100%;
 }
 
-@include media($tablet, min) {
+@include media($desktop, min) {
   .mapouter {
     height:400px;
     width: 600px;
