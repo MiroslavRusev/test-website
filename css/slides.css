@@ -11533,6 +11533,10 @@ a.control_next {
     width: 600px;
   }
 }
+.navHeading {
+  height: 32px;
+}
+
 /* fallback */
 @font-face {
   font-family: "Material Icons";
