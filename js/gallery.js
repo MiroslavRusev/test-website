@@ -10,13 +10,12 @@ for(var i = 0; i < l; i++) {
         screenItem.id = "gg-screen";
         container.prepend(screenItem);
         if (parentItem.hasAttribute('data-theme')) screenItem.setAttribute("data-theme", "dark");
-        var route = currentImg.src;
+        var route = currentImg.getAttribute('data-url');
         root.style.overflow = 'hidden';
         screenItem.innerHTML = '<div class="gg-image"></div><div class="gg-close gg-btn">&times</div><div class="gg-next gg-btn">&rarr;</div><div class="gg-prev gg-btn">&larr;</div>';
-        const first = images[0].src, last = images[l-1].src;
+        const first = images[0].getAttribute('data-url'), last = images[l-1].getAttribute('data-url');
         const imgItem = document.querySelector(".gg-image"), prevBtn = document.querySelector(".gg-prev"), nextBtn = document.querySelector(".gg-next"), close = document.querySelector(".gg-close");
-        imgItem.innerHTML = '<img src="' + route + '">';
-
+        imgItem.innerHTML = '<img data-url="' + route + '" src="' + route + '">';
         if (l > 1) {
             if (route == first) {
                 prevBtn.hidden = true;
@@ -53,18 +52,26 @@ for(var i = 0; i < l; i++) {
 
         function prev() {
             prevImg = currentImg.previousElementSibling;
-            imgItem.innerHTML = '<img src="' + prevImg.src + '">';
+            if(!prevImg) {
+                return hide()
+            }
+            let prevImgSrc = prevImg.getAttribute('data-url');
+            imgItem.innerHTML = '<img data-url="' + prevImgSrc + '" src="' + prevImgSrc + '">';
             currentImg = currentImg.previousElementSibling;
-            var mainImg = document.querySelector(".gg-image > img").src;
+            var mainImg = document.querySelector(".gg-image > img").getAttribute('data-url');
             nextBtn.hidden = false;
             prevBtn.hidden = mainImg === first;
         };
 
         function next() {
             nextImg = currentImg.nextElementSibling;
-            imgItem.innerHTML = '<img src="' + nextImg.src + '">';
+            if(!nextImg) {
+                return hide()
+            }
+            let nextImgSrc = nextImg.getAttribute('data-url');
+            imgItem.innerHTML = '<img data-url="' + nextImgSrc + '" src="' + nextImgSrc + '">';
             currentImg = currentImg.nextElementSibling;
-            var mainImg = document.querySelector(".gg-image > img").src;
+            var mainImg = document.querySelector(".gg-image > img").getAttribute('data-url');
             prevBtn.hidden = false;
             nextBtn.hidden = mainImg === last;
         };
