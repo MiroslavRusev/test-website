@@ -11426,8 +11426,9 @@ a.control_next {
 }
 
 #gg-screen .gg-image {
-  height: 100%;
+  top: 20%;
   display: inline-flex;
+  position: relative;
   justify-content: center;
   align-items: center;
 }

@@ -5,6 +5,10 @@ const l = images.length;
 
 for(var i = 0; i < l; i++) {
     images[i].addEventListener("click", function(i) {
+        let menu = root.querySelector(".panel.top");
+        let sidePole = root.querySelector(".side.pole");
+        menu.style.zIndex="0"
+        sidePole.style.zIndex="0";
         var currentImg = this;
         const parentItem = currentImg.parentElement, screenItem = document.createElement('div');
         screenItem.id = "gg-screen";
@@ -79,6 +83,8 @@ for(var i = 0; i < l; i++) {
         function hide() {
             root.style.overflow = 'auto';
             screenItem.remove();
+            sidePole.style.zIndex="100";
+            menu.style.zIndex="100";
         };
     });
 }
