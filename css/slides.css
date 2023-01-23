@@ -11375,6 +11375,14 @@ a.control_next {
     height: 300px;
   }
 }
+#gallerySection a {
+  transition: transform 0.2s;
+}
+#gallerySection a:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
 .gallery-wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
