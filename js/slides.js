@@ -164,42 +164,6 @@ $(document).ready(function() { "use strict";
     e.preventDefault();
   });
 
-  //Show Progress Bar
-  if (window.preload){
-    var imgs = [];
-    $("*").each(function() {
-      if($(this).css("background-image") !== "none") {
-        imgs.push($(this).css("background-image").replace(/.*\s?url\([\'\"]?/, '').replace(/[\'\"]?\).*/, ''));
-      } else if ($(this).is('img')){
-        imgs.push($(this).attr("src"));
-      }
-    });
-
-    window.images = imgs.length;
-    window.progressBar = $('.progress-bar');
-
-    //preload images (sort of)
-    $.cacheImage(imgs, { complete: function () {
-      window.loadingProgress++;
-      updateProgressBar();
-    }});
-
-    //show progress
-    function updateProgressBar(){
-
-      //loading
-      var progress = window.loadingProgress/window.images;
-
-      // animate
-      window.progressBar.css('width',progress * 100 + "%");
-
-      if (window.loadingProgress == window.images) {
-        window.progressBar.addClass('loaded');
-      }
-    }
-
-    updateProgressBar();
-  }
 
   //Initiate slide
   showSlide(window.stage);
@@ -277,7 +241,6 @@ $(document).ready(function() { "use strict";
         currenSlideIndex = currenSlide.index('.slide') + 1;
 
     //cleanup
-    hideDropdown();
     unzoomImage();
     hideSidebar();
     window.allowSlide = 1;
@@ -640,7 +603,6 @@ $(document).ready(function() { "use strict";
     //Hide dropdown
     hideDropdownOnScrollDelay++;
     if (hideDropdownOnScrollDelay >= 2){
-      hideDropdown();
       hideDropdownOnScrollDelay = 0;
     }
 
@@ -1058,7 +1020,6 @@ $(document).ready(function() { "use strict";
     /* [ esc ] */
     if (e.keyCode === 27){
       hideSidebar();
-      hideDropdown();
       hidePopup();
       unzoomImage();
     }
@@ -1237,8 +1198,6 @@ $(document).ready(function() { "use strict";
       hideSidebar();
     }
 
-    //clean up
-    hideDropdown();
 
   }
 
@@ -1342,8 +1301,6 @@ $(document).ready(function() { "use strict";
       }
     }
 
-    //clean up
-    hideDropdown();
   }
 
   function hidePopup(popupID) {
@@ -1734,375 +1691,6 @@ $(document).ready(function() { "use strict";
 
 
 
-
-
-
-
-/***
-*      _____                      _
-*     |  __ \                    | |
-*     | |  | |_ __ ___  _ __   __| | _____      ___ __
-*     | |  | | '__/ _ \| '_ \ / _` |/ _ \ \ /\ / / '_ \
-*     | |__| | | | (_) | |_) | (_| | (_) \ V  V /| | | |
-*     |_____/|_|  \___/| .__/ \__,_|\___/ \_/\_/ |_| |_|
-*                      | |
-*                      |_|
-*
-*     Dropdown Window and Share
-*/
-
-
-  window.dropdownShown = false;
-  //click
-  $('.dropdownTrigger').on('click', function(){
-    showDropdown($(this));
-  });
-
-  //hover
-  $('.dropdownTrigger.hover').hover(function(){
-    showDropdown($(this), "hover");
-  });
-
-  function showDropdown($this, $isHover){
-    $isHover = typeof $isHover !== 'undefined' ? $isHover : false;
-
-    //show
-    var offset = $this.offset(),
-        position = $this.position(),
-        offsetY = window.popupShown ? Math.ceil(position.top) : Math.ceil(offset.top),
-        offsetX = Math.ceil(offset.left),
-        dropdownID = $this.data('dropdown-id'),
-        $element = $('.dropdown[data-dropdown-id="' + dropdownID + '"]'),
-        elementPosition = $this.data('dropdown-position') ? $this.data('dropdown-position') : $element.attr('class'),
-        elementPosition = elementPosition.split(' ');
-
-    //hide
-    if (!$isHover) {
-      hideDropdown();
-    }
-
-    //vertical position
-    if ( elementPosition.indexOf('bottom') != -1 ) {
-      offsetY = offsetY - $element.outerHeight();
-      $element.removeClass('top').addClass('bottom');
-    } else {
-      offsetY = offsetY + $this.outerHeight();
-      $element.removeClass('bottom').addClass('top');
-    }
-
-    //horizontal position
-    if ( elementPosition.indexOf('right') != -1 ) {
-      offsetX = offsetX - $element.outerWidth() + $this.outerWidth();
-      $element.removeClass('left center').addClass('right');
-    } else if ( elementPosition.indexOf('left') != -1 ) {
-      $element.removeClass('right center').addClass('left');
-    } else if ( elementPosition.indexOf('center')  != -1 ) {
-      offsetX = offsetX - ($element.outerWidth()/2) + ($this.outerWidth()/2);
-      $element.removeClass('right left').addClass('center');
-    }
-
-    $element.addClass('show').css('top',offsetY).css('left',offsetX);
-    $html.addClass('dropdownShown dropdown_' + dropdownID);
-    window.dropdownShown = true;
-  }
-
-  function hideDropdown(){
-    //hide
-    if (window.dropdownShown){
-      $html.removeClass('dropdownShown').removeClassByPrefix('dropdown_');
-      window.dropdownShown = false;
-      hideDropdownOnScrollDelay = 0;
-      $('.dropdown.show').addClass('hide').one('webkitTransitionEnd otransitionend msTransitionEnd transitionend', function(){
-        $(this).removeClass('show hide')
-        $html.removeClass('dropdownShown').removeClassByPrefix('dropdown_');;
-      });
-      $(window).trigger('dropdownHidden');
-    }
-  }
-
-  //remove on resize
-  $(window).on('resize',function(){
-    hideDropdown();
-  });
-
-  //remove on click outside
-  $(document).on('mouseup touchstart', function (e){
-    var container = $(".dropdownShown .dropdown");
-    if (!container.is(e.target) && container.has(e.target).length === 0 && window.dropdownShown) {
-      hideDropdown();
-    }
-  });
-
-  //set url for share
-  window.shareUrl = window.location.href;
-  if ($('.share').data('url')) {
-    window.shareUrl = $('.dropdown').data('url');
-  }
-  //set text for share
-  window.shareText = document.title;
-  if ($('.share').data('text')) {
-    window.shareText = $('.dropdown').data('url');
-  }
-
-  $('.share').sharrre({
-    enableHover: false,
-    url: window.shareUrl,
-    text: window.shareText,
-    enableCounter: false,
-    share: {
-      twitter: true,
-      facebook: true,
-      pinterest: true,
-      googlePlus: true,
-      stumbleupon: true,
-      linkedin: true
-    },
-
-    buttons: {
-      pinterest: {
-        media: $('.dropdown').data('pinterest-image'),
-        description: $('.dropdown').data('text') + " " + $('.dropdown').data('url')
-      }
-    },
-
-    template: $('.share').html(),
-
-    render: function(api) {
-
-      $(api.element).on('click touchstart', '.social-twitter', function() {
-        api.openPopup('twitter');
-      });
-      $(api.element).on('click touchstart', '.social-facebook', function() {
-        api.openPopup('facebook');
-      });
-      $(api.element).on('click touchstart', '.social-pinterest', function() {
-        api.openPopup('pinterest');
-      });
-      $(api.element).on('click touchstart', '.social-googlePlus', function() {
-        api.openPopup('googlePlus');
-      });
-      $(api.element).on('click touchstart', '.social-stumbleupon', function() {
-        api.openPopup('stumbleupon');
-      });
-      $(api.element).on('click touchstart', '.social-linkedin', function() {
-        api.openPopup('linkedin');
-      });
-      $(api.element).on('click touchstart', '.mail', function() {
-        var subject = $(this).data('subject') ? $(this).data('subject') : "",
-            body = $(this).data('body') ? $(this).data('body') : "",
-            url = $('.dropdown').data('url') ? $('.dropdown').data('url') : window.location.href;
-
-        //open email
-        window.location.href ="mailto:?subject=" + encodeURIComponent( subject ) + "&body=" + encodeURIComponent( body ) + "%20" + url;
-      });
-
-    }
-  });
-
-
-
-
-
-
-
-
-/***
-*      _____  _       _
-*     |  __ \(_)     | |
-*     | |  | |_  __ _| | ___   __ _
-*     | |  | | |/ _` | |/ _ \ / _` |
-*     | |__| | | (_| | | (_) | (_| |
-*     |_____/|_|\__,_|_|\___/ \__, |
-*                              __/ |
-*                             |___/
-*     Dialog Windows
-*/
-
-
-  //show dialog message
-  $('.dialogTrigger[data-dialog-id]').on('click', function(){
-    var dialogID = $(this).data('dialog-id');
-
-    window.showDialog(dialogID)
-  });
-
-
-
-  //reveal the dialog with ID
-  window.showDialog = function(id) {
-
-    var dialogID = id,
-        $element = $('.dialog[data-dialog-id="' + dialogID + '"]');
-
-    if (!$element.is(':visible')){
-      $element.addClass('reveal').slideDown(500,function(){
-        $(this).removeClass('reveal').removeClass('hidden');
-      });
-    }
-  }
-
-  //hide dialog message
-  $('.dialog [data-dialog-action="close"], .dialog [data-dialog-action="hide"]').on('click', function(){
-    var $element = $(this).parents('.dialog'),
-        action = $(this).data('dialog-action'),
-        dialogID = $element.data('dialog-id'),
-        cookieAge = $element.data('set-cookie'),
-        cookieName = ($element.data('cookie-name')) ? $element.data('cookie-name') : dialogID,
-        cookieValue = ($element.data('cookie-value')) ? $element.data('cookie-value') : true,
-        cookiePath = $element.data('cookie-path');
-
-    $element.addClass('hide').slideUp(500,function(){
-      $(this).removeClass('hide');
-
-      if (cookieAge && action == "close"){
-        $.cookie(cookieName, cookieValue, { expires: cookieAge, path: cookiePath });
-      }
-    });
-  });
-
-  //hide dialog message with cookie
-  $('.dialog[data-set-cookie]').each(function(index, element) {
-    var dialogID = $(element).data('dialog-id'),
-        cookieName = ($(element).data('cookie-name')) ? $(element).data('cookie-name') : dialogID,
-        cookieValue = ($(element).data('cookie-value')) ? $(element).data('cookie-value') : true;
-
-    if ($.cookie(cookieName)){
-      $(element).hide();
-    }
-  });
-
-  //links
-  $('.dialog [data-href]').on('click', function(){
-    if ($(this).data('target')){
-      window.open($(this).data('href'), '_blank');
-    } else {
-      window.location = $(this).data('href');
-    }
-  });
-
-  //delay reveal for dialog window
-  $('.dialog.hidden[data-dialog-delay]').each(function(){
-    var timeoutDelay = parseFloat($(this).attr('data-dialog-delay')),
-        $element = $(this);
-
-    if (!isNaN(timeoutDelay)) {
-      setTimeout(function(){
-        $element.addClass('reveal').slideDown(500,function(){
-          $(this).removeClass('reveal').removeClass('hidden');
-        });
-      }, timeoutDelay);
-    }
-  });
-
-  //delay reveal for dialog window
-  $('.dialog[data-dialog-hide-delay]').each(function(){
-    var timeoutDelay = parseFloat($(this).attr('data-dialog-hide-delay')),
-        $element = $(this);
-
-    if (!isNaN(timeoutDelay)) {
-      setTimeout(function(){
-        $element.addClass('hide').slideUp(500,function(){
-          $(this).removeClass('hide');
-        });
-      }, timeoutDelay);
-    }
-  });
-
-  //submit form
-  $('.dialog [data-type="submit"]').click(function(){
-    $(this).parents('form').submit();
-  });
-
-
-
-
-/***
-*       _____            _             _     ______
-*      / ____|          | |           | |   |  ____|
-*     | |     ___  _ __ | |_ __ _  ___| |_  | |__ ___  _ __ _ __ ___
-*     | |    / _ \| '_ \| __/ _` |/ __| __| |  __/ _ \| '__| '_ ` _ \
-*     | |___| (_) | | | | || (_| | (__| |_  | | | (_) | |  | | | | | |
-*      \_____\___/|_| |_|\__\__,_|\___|\__| |_|  \___/|_|  |_| |_| |_|
-*
-*     Ajax Contact Form
-*/
-
-  $('#contact-form, [data-ajax-form]').each(function(index, element) {
-    $(element).ajaxForm(function() {
-      var $ajaxForm = $(element),
-          $ajaxFormButton = $(element).find('[type="submit"]'),
-          ajaxFormButtonIsInput = $ajaxFormButton.is('input') ? true : false,
-          successText = $ajaxFormButton.data('success-text') ? $ajaxFormButton.data('success-text') : "Done!",
-          successClass = $ajaxFormButton.data('success-class') ? $ajaxFormButton.data('success-class') : "green",
-          defaultText = ajaxFormButtonIsInput ? $ajaxFormButton.val() : $ajaxFormButton.html(),
-          defaultClasses = $ajaxFormButton.attr('class');
-
-      if (ajaxFormButtonIsInput) {
-        $ajaxFormButton.val(successText);
-      } else {
-        $ajaxFormButton.text(successText)
-      }
-      $ajaxFormButton.addClass(successClass);
-
-      setTimeout(function(){
-        if (ajaxFormButtonIsInput) {
-          $ajaxFormButton.val(defaultText);
-        } else {
-          $ajaxFormButton.html(defaultText);
-        }
-        $ajaxFormButton.attr('class', defaultClasses);
-        $ajaxForm[0].reset();
-      },4000);
-    });
-  });
-
-
-
-
-
-
-/***
-*       _____                       _
-*      / ____|                     | |
-*     | (___   ___  _   _ _ __   __| |
-*      \___ \ / _ \| | | | '_ \ / _` |
-*      ____) | (_) | |_| | | | | (_| |
-*     |_____/ \___/ \__,_|_| |_|\__,_|
-*
-*     Music and Sound
-*/
-
-  $('audio[data-sound-id]').each(function(event, element){
-    var $element = $(element),
-        musicID = $element.data('sound-id'),
-        audio = $element[0],
-        $soundButton = $('.soundTrigger[data-sound-id="'+musicID+'"]');
-
-    if (audio.autoplay){
-      $soundButton.addClass('playing');
-    } else {
-      $soundButton.removeClass('playing');
-    }
-  });
-
-  $('.soundTrigger').click(function(){
-    var musicID = $(this).data('sound-id'),
-        $audio = $('audio[data-sound-id="'+musicID+'"]'),
-        action = $audio.data('sound-action') ? $audio.data('sound-action') : "toggle",
-        fade = (parseInt($audio.data('sound-fade')) >= 0 || $audio.data('sound-fade')) ? parseInt($audio.data('sound-fade')) : 500;
-
-    if ($audio[0].paused && ( action === "toggle" || action === "play")){
-      $audio[0].play();
-      $audio.animate({volume: 1}, fade);
-      $(this).addClass('playing');
-    } else if (action === "toggle" || action === "pause"){
-      $audio.animate({volume: 0}, fade, function(){
-        $audio[0].pause();
-      });
-
-      $(this).removeClass('playing');
-    }
-  });
 
 // end on dom ready
 });
